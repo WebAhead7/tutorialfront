@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from "react";
+import SearchTutorial from "../../components/SearchTutorial/index";
 
 const Tutorials = () => {
-  return <h4>Tutorials </h4>;
+  const [SearchTutorial, setSearchTutorial] = useState("");
+  return (
+    <div>
+      <h4>Tutorials </h4>
+      <SearchTutorial setSearchTutorial={setSearchTutorial} />;
+    </div>
+  );
 };
 
 export default Tutorials;
