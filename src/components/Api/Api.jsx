@@ -4,6 +4,7 @@ export const getTutorials = async (setList) => {
   const listUrl = `${heroku}/tutorials`;
   try {
     const data = await fetch(listUrl);
+    console.log(data);
     const list = await data.json();
     setList(list);
     // console.log(list);
