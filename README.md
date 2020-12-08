@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 https://tutorialfrontendkav.herokuapp.com/
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,56 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# Tutorial - Client Side
+https://tutorialfrontendkav.herokuapp.com/
+
+<br />
+
+<!-- TABLE OF CONTENTS -->
+
+## Table of Contents
+
+- [About the Project](#about-the-project)
+- [Getting Started](#getting-started)
+- [Built With](#built-with)
+- [Roadmap](#roadmap)
+- [Contact](#contact)
+
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+Building client side with React for our project last week
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+1. Clone this repo
+1. Run `npm install`
+1. Run `npm start`
+
+Check out the project instructions from WebAhead: [Projet instructions](https://github.com/WebAhead/master-reference/blob/master/coursebook/week-10/project.md)
+
+## Built With
+
+- JS
+- CSS
+- React.js
+
+<!-- ROADMAP -->
+
+## Roadmap
+
+See the [open issues](https://github.com/WebAhead7/tutorialfront/issues) for a list of proposed features (and known issues).
+
+<!-- CONTACT -->
+
+## Contact
+
+- Ahmad : [@GitHub](https://github.com/ahmad420)
+- Shoog : [@GitHub](https://github.com/shoogkabiya)
+- Rakad : [@GitHub](https://github.com/rakad-kh)
+- Salah : [@GitHub](https://github.com/mjmajadly)
+>>>>>>> a3969afc373d6cc847bbe54e0efe37e4dd17b4ee
