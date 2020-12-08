@@ -27,9 +27,6 @@ Building client side with React for our project last week
 1. Run `npm install`
 1. Run `npm start`
 
-### create .env file and add DATABASE_URL and JWT_SECRET
-Run databse, and do in wsl "\include database/init.sql" to start running the table in PSQL 
-
 Check out the project instructions from WebAhead: [Projet instructions](https://github.com/WebAhead/master-reference/blob/master/coursebook/week-10/project.md)
 
 ## Built With
