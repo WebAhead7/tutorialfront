@@ -1,10 +1,13 @@
-import React from 'react';
-import OneTutorial from '../OneTutorial';
-import { NavLink, Route } from 'react-router-dom';
+import React from "react";
+import OneTutorial from "../OneTutorial";
+import SearchTutorial from "../SearchTutorial/index";
+import { NavLink, Route } from "react-router-dom";
 
 const Tutorials = (props) => {
-  console.log('test');
+  console.log("test");
   const [selectedId, setSelectedId] = React.useState(null);
+  const [searchTutorial, setSearchTutorial] = React.useState("");
+  const [visibile, setVisibile] = React.useState(false);
   const list = props.list;
   console.log(list);
   if (!list) {
@@ -12,20 +15,43 @@ const Tutorials = (props) => {
   }
 
   const buildList = () =>
-    list.map((item) => (
-      <div className='center' style={{ background: 'lightblue' }}>
-        {/* <h3>{item.id}</h3> */}
-        <h3>{item.tutorial_title}</h3>
-        <button onClick={() => setSelectedId(item.id)}>Here</button>
-        {item.id === selectedId && filterList()}
-      </div>
-    ));
+    list
+      .filter(
+        (item) =>
+          item.tutorial_title
+            .toLowerCase()
+            .indexOf(searchTutorial.toLowerCase()) !== -1
+      )
+      .map((item) => (
+        <div className="center" style={{ background: "lightblue" }}>
+          {/* <h3>{item.id}</h3> */}
+          <h3>{item.tutorial_title}</h3>
+          <button
+            style={{ visibility: visibile }}
+            onClick={() => {
+              !visibile ? setVisibile(true) : setVisibile(false);
+              setSelectedId(item.id)
+            }} >Here</button>
+          {item.id === selectedId && visibile && filterList()}
+        </div>
+      ));
 
   const filterList = () =>
     list
       .filter((item) => selectedId === item.id)
       .map((item) => <OneTutorial item={item} />);
 
-  return <div>{buildList()}</div>;
+  return (
+    <div>
+      <div>
+        <SearchTutorial
+          searchTutorial={searchTutorial}
+          setSearchTutorial={setSearchTutorial}
+        />
+      </div>
+
+      <div>{buildList()}</div>
+    </div>
+  );
 };
 export default Tutorials;
