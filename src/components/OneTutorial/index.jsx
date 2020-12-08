@@ -1,8 +1,8 @@
-import React from 'react';
-import Tutorials from '../Tutorials';
+import React from "react";
+import Tutorials from "../Tutorials";
 
 const OneTutorial = (props) => {
-  console.log('test');
+  console.log("test");
   const item = props.item;
   if (!item) {
     return <h3>...Loading</h3>;
@@ -12,7 +12,7 @@ const OneTutorial = (props) => {
   console.log(item);
 
   return (
-    <div className='center' style={{ background: 'whitesmoke' }}>
+    <div className="center" style={{ background: "whitesmoke" }}>
       <h2>{item.tutorial_title}</h2>
       <ul>
         {/* <li>Tutorial ID: {item.id}</li> */}
@@ -25,8 +25,8 @@ const OneTutorial = (props) => {
         <p>
           Status:
           {item.tutorial_status
-            ? ' Tutorial Currently Available'
-            : ' Tutorial Not Available at This Time'}
+            ? " Tutorial Currently Available"
+            : " Tutorial Not Available at This Time"}
         </p>
       </div>
     </div>

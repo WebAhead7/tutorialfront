@@ -6,7 +6,7 @@ import { NavLink, Route } from "react-router-dom";
 const Tutorials = (props) => {
   console.log("test");
   const [selectedId, setSelectedId] = React.useState(null);
-  const [SearchTutorial, setSearchTutorial] = React.useState("");
+  const [searchTutorial, setSearchTutorial] = React.useState("");
   const list = props.list;
   console.log(list);
   if (!list) {
@@ -14,14 +14,21 @@ const Tutorials = (props) => {
   }
 
   const buildList = () =>
-    list.map((item) => (
-      <div className="center" style={{ background: "lightblue" }}>
-        {/* <h3>{item.id}</h3> */}
-        <h3>{item.tutorial_title}</h3>
-        <button onClick={() => setSelectedId(item.id)}>Here</button>
-        {item.id === selectedId && filterList()}
-      </div>
-    ));
+    list
+      .filter(
+        (item) =>
+          item.tutorial_title
+            .toLowerCase()
+            .indexOf(searchTutorial.toLowerCase()) !== -1
+      )
+      .map((item) => (
+        <div className="center" style={{ background: "lightblue" }}>
+          {/* <h3>{item.id}</h3> */}
+          <h3>{item.tutorial_title}</h3>
+          <button onClick={() => setSelectedId(item.id)}>Here</button>
+          {item.id === selectedId && filterList()}
+        </div>
+      ));
 
   const filterList = () =>
     list
@@ -30,8 +37,14 @@ const Tutorials = (props) => {
 
   return (
     <div>
-      {buildList()}
-      <SearchTutorial setSearchTutorial={setSearchTutorial} />
+      <div>
+        <SearchTutorial
+          searchTutorial={searchTutorial}
+          setSearchTutorial={setSearchTutorial}
+        />
+      </div>
+
+      <div>{buildList()}</div>
     </div>
   );
 };
