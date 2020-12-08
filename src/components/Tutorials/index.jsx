@@ -23,8 +23,8 @@ const Tutorials = (props) => {
             .toLowerCase()
             .indexOf(searchTutorial.toLowerCase()) !== -1
       )
-      .map((item) => (
-        <div className='center' style={{ background: 'lightblue' }}>
+      .map((item, i) => (
+        <div key={i} className='center' style={{ background: 'lightblue' }}>
           {/* <h3>{item.id}</h3> */}
           <h3>{item.tutorial_title}</h3>
           <button

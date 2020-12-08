@@ -8,7 +8,7 @@ function SearchTutorial(props) {
   return (
     <div className='center'>
       <input
-        class='searchBox'
+        className='searchBox'
         placeholder='Tutorial Name'
         className='searchtutorial'
         type='text'
