@@ -1,12 +1,13 @@
-import React from "react";
-import OneTutorial from "../OneTutorial";
-import SearchTutorial from "../SearchTutorial/index";
-import { NavLink, Route } from "react-router-dom";
+import React from 'react';
+import OneTutorial from '../OneTutorial';
+import SearchTutorial from '../SearchTutorial/index';
+import { NavLink, Route } from 'react-router-dom';
+import './style.css';
 
 const Tutorials = (props) => {
-  console.log("test");
+  console.log('test');
   const [selectedId, setSelectedId] = React.useState(null);
-  const [searchTutorial, setSearchTutorial] = React.useState("");
+  const [searchTutorial, setSearchTutorial] = React.useState('');
   const list = props.list;
   console.log(list);
   if (!list) {
@@ -22,10 +23,10 @@ const Tutorials = (props) => {
             .indexOf(searchTutorial.toLowerCase()) !== -1
       )
       .map((item) => (
-        <div className="center" style={{ background: "lightblue" }}>
+        <div className='center' style={{ background: 'lightblue' }}>
           {/* <h3>{item.id}</h3> */}
           <h3>{item.tutorial_title}</h3>
-          <button onClick={() => setSelectedId(item.id)}>Here</button>
+          <button onClick={() => setSelectedId(item.id)}>More Details</button>
           {item.id === selectedId && filterList()}
         </div>
       ));
