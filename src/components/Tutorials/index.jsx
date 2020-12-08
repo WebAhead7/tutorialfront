@@ -8,6 +8,7 @@ const Tutorials = (props) => {
   console.log('test');
   const [selectedId, setSelectedId] = React.useState(null);
   const [searchTutorial, setSearchTutorial] = React.useState('');
+  const [visibile, setVisibile] = React.useState(false);
   const list = props.list;
   console.log(list);
   if (!list) {
@@ -26,8 +27,16 @@ const Tutorials = (props) => {
         <div className='center' style={{ background: 'lightblue' }}>
           {/* <h3>{item.id}</h3> */}
           <h3>{item.tutorial_title}</h3>
-          <button onClick={() => setSelectedId(item.id)}>More Details</button>
-          {item.id === selectedId && filterList()}
+          <button
+            style={{ visibility: visibile }}
+            onClick={() => {
+              !visibile ? setVisibile(true) : setVisibile(false);
+              setSelectedId(item.id);
+            }}
+          >
+            More Details
+          </button>
+          {item.id === selectedId && visibile && filterList()}
         </div>
       ));
 

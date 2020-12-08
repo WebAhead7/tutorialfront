@@ -19,3 +19,10 @@ input .searchBox {
   background: rgba(169, 169, 169, 0.377);
   outline: none;
 }
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 70%;
+}
