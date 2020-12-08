@@ -9,6 +9,8 @@ import Home from "./components/Home";
 import React, { useState, useEffect } from "react";
 import { getTutorials } from "./components/Api/Api";
 import EditTutorial from "./components/EditTutorial";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
 
 function App() {
   const [list, setList] = useState(null);
@@ -22,8 +24,8 @@ function App() {
 
       {/* who is logged in maybe here inside Navbar --> countItems={cart.length} */}
       <Route exact path="/" component={() => <Tutorials list={list} />} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/about" component={About} />
+      <Route path="/login" component={Login} />
+      <Route path="/signup" component={Signup} />
     </BrowserRouter>
   );
 }
