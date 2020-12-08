@@ -1,0 +1,19 @@
+button {
+  cursor: pointer;
+  background: transparent;
+  height: 40px;
+  width: 100px;
+  font-weight: 500;
+  color: white;
+  border-radius: 10px;
+  background: rgb(204, 58, 193);
+  background: linear-gradient(
+    8deg,
+    rgba(204, 58, 193, 0.9605218796502977) 36%,
+    rgba(0, 255, 39, 0.9344178960564431) 100%
+  );
+}
+
+button:focus {
+  outline: none;
+}

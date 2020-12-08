@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Helvetica, Arial,
+    sans-serif;
+  color: hsl(220, 10%, 20%);
+  background-color: hsl(220, 10%, 98%);
+  align-items: center;
+  text-align: center;
+}
+.container {
+  align-items: left;
+  text-align: left;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+li {
+  text-align: center;
+}
+li h3 {
+  font-size: small;
+}
+li img {
+  width: 100px;
+  /* height: 50px; */
+}
+main {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+.filters {
+  margin-top: 15px;
+  padding: 0.5rem;
+  width: 35%;
+  background-color: hsl(220, 20%, 90%);
+  align-items: center;
+}
+
+h1 {
+  position: relative;
+  font-weight: 900;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+h3 {
+  position: relative;
+  font-weight: 600;
+  font-size: 2.2rem;
+  /* margin-bottom: 3rem; */
+}
+h1::after {
+  content: '';
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  width: 4rem;
+  height: 0.25rem;
+  background-color: #fff;
+}
+
+fieldset {
+  margin-top: 0.5rem;
+  border: 0.25rem solid hsl(200, 10%, 98%);
+}
+
+legend {
+  font-weight: bold;
+}
+
+label {
+  display: block;
+}
+
+label + label {
+  margin-top: 0.25rem;
+}
+
+input {
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.items {
+  padding: 4rem;
+  text-align: center;
+}
+
+.grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  grid-gap: 1.5rem;
+  align-content: start;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 0.25rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 6px hsla(220, 10%, 30%, 0.2),
+    0 8px 16px hsla(220, 10%, 30%, 0.2);
+  padding: 1rem;
+  background-color: #fff;
+  text-align: center;
+}
+.card img {
+  width: 100px;
+}
+.card p {
+  font-size: 20px;
+}
+.category-checkbox {
+  position: relative !important;
+  opacity: 1 !important;
+  margin: 0px 10px;
+}
+fieldset h4 {
+  text-align: center;
+}

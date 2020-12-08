@@ -12,10 +12,10 @@ const Navbar = (props) => {
             <NavLink to='/'>Home</NavLink>
           </li>
           <li>
-            <NavLink to='/about'>About</NavLink>
+            <NavLink to='/signup'>Sign up</NavLink>
           </li>
           <li>
-            <NavLink to='/contact'>Contact</NavLink>
+            <NavLink to='/Login'>Log in</NavLink>
           </li>
           {/* <li>
             <NavLink to='/cart'>
