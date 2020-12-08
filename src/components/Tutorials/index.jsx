@@ -1,16 +1,15 @@
 import React from 'react';
 import OneTutorial from '../OneTutorial';
 import SearchTutorial from '../SearchTutorial/index';
-import { NavLink, Route } from 'react-router-dom';
 import './style.css';
 
 const Tutorials = (props) => {
-  console.log('test');
+  // console.log('test');
   const [selectedId, setSelectedId] = React.useState(null);
   const [searchTutorial, setSearchTutorial] = React.useState('');
   const [visibile, setVisibile] = React.useState(false);
   const list = props.list;
-  console.log(list);
+  // console.log(list);
   if (!list) {
     return <h3>...Loading</h3>;
   }
@@ -23,8 +22,8 @@ const Tutorials = (props) => {
             .toLowerCase()
             .indexOf(searchTutorial.toLowerCase()) !== -1
       )
-      .map((item) => (
-        <div className='center' style={{ background: 'lightblue' }}>
+      .map((item, i) => (
+        <div key={i} className='center' style={{ background: 'lightblue' }}>
           {/* <h3>{item.id}</h3> */}
           <h3>{item.tutorial_title}</h3>
           <button

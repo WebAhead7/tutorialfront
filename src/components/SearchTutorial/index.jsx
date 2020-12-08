@@ -8,9 +8,9 @@ function SearchTutorial(props) {
   return (
     <div className='center'>
       <input
-        class='searchBox'
+        className='searchBox'
         placeholder='Tutorial Name'
-        className='searchtutorial'
+        // className='searchtutorial'
         type='text'
         value={props.searchTutorial}
         onChange={handleTextChanged}
