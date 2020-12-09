@@ -1,96 +1,113 @@
 import React from 'react';
+import './style.css';
 
-const Signup = () => {
-  return <div>
+function Signup() {
+  const [userid, setUserId] = React.useState('');
+  const [username, setUsername] = React.useState('');
+  const [firstname, setFirstName] = React.useState('');
+  const [lastname, setLastName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [user_password, setPass] = React.useState('');
+  const [msg, setMsg] = React.useState('');
+  function handleSubmit() {
+    const data = {
+      userid,
+      username,
+      firstname,
+      lastname,
+      email,
+      user_password,
+    };
+    const heroku = `https://expressbackkav.herokuapp.com/`;
+    const url = `${heroku}signup`;
+    // console.log('url', url);
+    console.log(data);
+    console.log(JSON.stringify(data));
 
-    <h4>Signup </h4>
-    <form >
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        // console.log('res: ', res);
+        setMsg(res.msg);
+      })
+      .catch((err) => console.log(err));
+  }
 
-      <div className="id">
+  return (
+    <div className='signup center'>
+      <form>
+        <h1 id='signup-title'>Sign Up</h1>
+        <label htmlFor='userid'>Identification Number:</label>
         <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          style={{ width: '300px' }}
-
-          // onChange={/*handleChange*/}
-          autoComplete="off"
+          type='text'
+          id='userid'
+          name='userid'
+          required
+          value={userid}
+          onChange={(event) => setUserId(event.target.value)}
         />
-        {/* {errors.name.length > 0 && (
-              <span className="error">{errors.name}</span>
-            )} */}
-      </div>
-
-      <div className="userid">
+        <br />
+        <label htmlFor='username'>Username:</label>
         <input
-          type="text"
-          name="userid"
-          style={{ width: '300px' }}
-          placeholder="user id "
-        // onChange={/*handleChange*/}
+          type='text'
+          id='username'
+          name='username'
+          required
+          value={username}
+          onChange={(event) => setUsername(event.target.value)}
         />
-      </div>
-
-      <div className="username">
+        <br />
+        <label htmlFor='fname'>First name:</label>
         <input
-          type="text"
-          style={{ width: '300px' }}
-          name="userid"
-          placeholder="user id "
-        // onChange={/*handleChange*/}
+          type='text'
+          id='fname'
+          name='fname'
+          required
+          value={firstname}
+          onChange={(event) => setFirstName(event.target.value)}
         />
-      </div>
-
-      <div className="firstname">
+        <br />
+        <label htmlFor='lname'>Last name:</label>
         <input
-          type="text"
-          name="firstname"
-          style={{ width: '300px' }}
-          placeholder="first name "
-        // onChange={/*handleChange*/}
+          type='text'
+          id='lname'
+          name='lname'
+          required
+          value={lastname}
+          onChange={(event) => setLastName(event.target.value)}
         />
-      </div>
-
-      <div className="lastname">
+        <br />
+        <label htmlFor='email'>Email:</label>
         <input
-          type="text"
-          name="lastname"
-          placeholder="last name"
-          style={{ width: '300px' }}
-        // onChange={/*handleChange*/}
+          type='email'
+          // type='text'
+          id='email'
+          name='email'
+          required
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
         />
-      </div>
-
-      <div className="email">
+        <br />
+        <label htmlFor='pass'>Password:</label>
         <input
-          type="email"
-          name="email"
-          placeholder="email"
-          style={{ width: '300px' }}
-        // onChange={/*handleChange*/}
+          type='password'
+          // type='text'
+          id='pass'
+          name='pass'
+          required
+          value={user_password}
+          onChange={(event) => setPass(event.target.value)}
         />
+        <br />
+      </form>
+      <button onClick={handleSubmit}>SUBMIT</button>
 
-      </div>
-
-      <div className="password">
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          style={{ width: '300px' }}
-        // onChange={/*handleChange*/}
-        />
-
-      </div>
-
-
-      <div className="submit">
-        <button>Log in</button>
-      </div>
-    </form>
-
-  </div>
-
-};
-
+      <h1>{msg}</h1>
+    </div>
+  );
+}
 export default Signup;

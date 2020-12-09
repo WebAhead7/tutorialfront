@@ -28,3 +28,31 @@ export const deleteTutorials = async (id) => {
     console.log(error);
   }
 };
+
+// function request(url, options) {
+//   return fetch(url, options).then((response) => {
+//     if (!response.ok) {
+//       const error = new Error('HTTP Error');
+//       error.status = response.status;
+//       throw error;
+//     } else {
+//       return response.json();
+//     }
+//   });
+// }
+
+// export function login(loginData) {
+//   console.log('loginData', loginData);
+//   return request(`${heroku}/log-in`, {
+//     method: 'POST',
+//     body: JSON.stringify(loginData),
+//     headers: { 'content-type': 'application/json' },
+//   });
+// }
+
+// export function getUser(id) {
+//   return request(`${heroku}/users/${id}`, {
+//     method: 'POST',
+//     headers: { 'content-type': 'API-Key' },
+//   });
+// }
