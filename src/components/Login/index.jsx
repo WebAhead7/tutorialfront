@@ -2,6 +2,7 @@
 import React from 'react';
 import './style.css';
 import { NavLink } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = React.useState('');
@@ -56,6 +57,7 @@ function Login() {
       <br />
       <NavLink to='/signup'>Click Here To Signup</NavLink>
       <h1>{msg} </h1>
+      {msg === 'Logged in' ? <Redirect to={`/`} /> : null}
     </div>
   );
 }

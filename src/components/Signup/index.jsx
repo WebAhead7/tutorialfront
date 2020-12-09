@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-
+import { Redirect } from 'react-router-dom';
 function Signup() {
   const [userid, setUserId] = React.useState('');
   const [username, setUsername] = React.useState('');
@@ -10,6 +10,7 @@ function Signup() {
   const [user_password, setPass] = React.useState('');
   const [msg, setMsg] = React.useState('');
   function handleSubmit() {
+    // e.preventDefault();
     const data = {
       userid,
       username,
@@ -39,7 +40,7 @@ function Signup() {
 
   return (
     <div className='signup center'>
-      <form>
+      <form onSubmit={handleSubmit()}>
         <h1 id='signup-title'>Sign Up</h1>
         <label htmlFor='userid'>Identification Number:</label>
         <input
@@ -104,9 +105,12 @@ function Signup() {
         />
         <br />
       </form>
-      <button onClick={handleSubmit}>SUBMIT</button>
+      <button type='submit'>SUBMIT</button>
 
       <h1>{msg}</h1>
+      {/* {msg === 'You have successfully signed up' ? (
+        <Redirect to={`/login`} />
+      ) : null} */}
     </div>
   );
 }
