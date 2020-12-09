@@ -16,7 +16,8 @@ function Login() {
   const url = `${heroku}log-in`;
   // console.log('url', url);
 
-  function loginHandler() {
+  const loginHandler = (event) => {
+    event.preventDefault();
     fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -31,12 +32,12 @@ function Login() {
         localStorage.setItem('access_token', res.access_token);
       })
       .catch((error) => console.error(error.msg));
-  }
+  };
   return (
     <div className='login center'>
       <h1 id='log-in-title'>Log in</h1>
 
-      <form>
+      <form onSubmit={loginHandler}>
         <div className='fields'>
           <input
             type='email'
@@ -51,8 +52,8 @@ function Login() {
             onChange={(event) => setPassword(event.target.value)}
           />
         </div>
+        <button type='submit'>Login</button>
       </form>
-      <button onClick={loginHandler}>Login</button>
       <br />
       <br />
       <NavLink to='/signup'>Click Here To Signup</NavLink>

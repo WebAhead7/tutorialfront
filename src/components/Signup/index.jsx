@@ -9,7 +9,8 @@ function Signup() {
   const [email, setEmail] = React.useState('');
   const [user_password, setPass] = React.useState('');
   const [msg, setMsg] = React.useState('');
-  function handleSubmit() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     // e.preventDefault();
     const data = {
       userid,
@@ -36,11 +37,11 @@ function Signup() {
         setMsg(res.msg);
       })
       .catch((err) => console.log(err));
-  }
+  };
 
   return (
     <div className='signup center'>
-      <form onSubmit={handleSubmit()}>
+      <form onSubmit={handleSubmit}>
         <h1 id='signup-title'>Sign Up</h1>
         <label htmlFor='userid'>Identification Number:</label>
         <input
@@ -104,13 +105,12 @@ function Signup() {
           onChange={(event) => setPass(event.target.value)}
         />
         <br />
+        <button type='submit'>SUBMIT</button>
       </form>
-      <button type='submit'>SUBMIT</button>
-
       <h1>{msg}</h1>
-      {/* {msg === 'You have successfully signed up' ? (
+      {msg === 'You have successfully signed up' ? (
         <Redirect to={`/login`} />
-      ) : null} */}
+      ) : null}
     </div>
   );
 }
