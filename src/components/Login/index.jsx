@@ -28,9 +28,7 @@ function Login() {
       })
       .then((res) => {
         setmsg(res.msg);
-        // console.log(res.access_token);
-        //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMTIzNDU2IiwiaWF0IjoxNjA3NTMxNjQ0fQ.JgzR4fvyuFqpHqqFydOQSlQF_mIXrGu3mo0WL7gGTeQ
-        //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMTIzNDU2IiwiaWF0IjoxNjA3NTMxNzcxfQ.69i5zwzgX5iZqCTCZARrqiByIltVDx0UIf-evM6XNTE
+
         localStorage.setItem("access_token", res.access_token);
       })
       .catch((error) => console.error(error.msg));
