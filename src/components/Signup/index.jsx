@@ -11,7 +11,6 @@ function Signup() {
   const [msg, setMsg] = React.useState('');
   const handleSubmit = (event) => {
     event.preventDefault();
-    // e.preventDefault();
     const data = {
       userid,
       username,
