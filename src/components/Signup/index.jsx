@@ -2,13 +2,15 @@ import React from "react";
 import "./style.css";
 import { Redirect } from "react-router-dom";
 function Signup() {
-  const [userid, setUserId] = React.useState("");
-  const [username, setUsername] = React.useState("");
-  const [firstname, setFirstName] = React.useState("");
-  const [lastname, setLastName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [user_password, setPass] = React.useState("");
-  const [msg, setMsg] = React.useState("");
+
+  const [userid, setUserId] = React.useState('');
+  const [username, setUsername] = React.useState('');
+  const [firstname, setFirstName] = React.useState('');
+  const [lastname, setLastName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [user_password, setPass] = React.useState('');
+  const [msg, setMsg] = React.useState('');
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = {
@@ -39,10 +41,12 @@ function Signup() {
   };
 
   return (
-    <div className="signup center">
+
+    <div className='signup center'>
       <form onSubmit={handleSubmit}>
-        <h1 id="signup-title">Sign Up</h1>
-        <label htmlFor="userid">Identification Number:</label>
+        <h1 id='signup-title'>Sign Up</h1>
+        <label htmlFor='userid'>Identification Number:</label>
+
         <input
           type="text"
           id="userid"
@@ -104,10 +108,14 @@ function Signup() {
           onChange={(event) => setPass(event.target.value)}
         />
         <br />
-        <button type="submit">SUBMIT</button>
+
+      
+
+        <button type='submit'>SUBMIT</button>
       </form>
       <h1>{msg}</h1>
-      {msg === "You have successfully signed up" ? (
+      {msg === 'You have successfully signed up' ? (
+
         <Redirect to={`/login`} />
       ) : null}
     </div>

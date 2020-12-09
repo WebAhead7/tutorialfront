@@ -33,13 +33,20 @@ function Login() {
       })
       .catch((error) => console.error(error.msg));
   };
-  const logout = () => {};
+
+
+
+
   return (
     <div className="login center">
       <h1 id="log-in-title">Log in</h1>
 
       <form onSubmit={loginHandler}>
-        <div className="fields">
+
+     
+
+        <div className='fields'>
+
           <input
             type="email"
             placeholder="Email"
@@ -53,7 +60,11 @@ function Login() {
             onChange={(event) => setPassword(event.target.value)}
           />
         </div>
-        <button type="submit">Login</button>
+
+     
+
+        <button type='submit'>Login</button>
+
       </form>
       <br />
       <br />
