@@ -17,21 +17,21 @@ function App() {
     getTutorials(setList);
   }, []);
 
-  useEffect(() => {
-    const token = window.localStorage.getItem('access_token')
+  // useEffect(() => {
+  //   const token = window.localStorage.getItem('access_token')
 
-    if (token) {
-      setIsLoggedIn(true)
-      // getUser(token)
-      //   .then((data) => {
-      //     setIsLoggedIn(true)
-      //     setUser(data);
-      //   })
-      //   .catch((error) => {
-      //     console.log(error)
-      //   })
-    }
-  }, [isLoggedIn, Navbar])
+  //   if (token) {
+  //     setIsLoggedIn(true)
+  //     // getUser(token)
+  //     //   .then((data) => {
+  //     //     setIsLoggedIn(true)
+  //     //     setUser(data);
+  //     //   })
+  //     //   .catch((error) => {
+  //     //     console.log(error)
+  //     //   })
+  //   }
+  // }, [isLoggedIn, Navbar])
 
   return (
     <BrowserRouter>

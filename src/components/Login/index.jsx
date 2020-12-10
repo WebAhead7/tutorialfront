@@ -22,9 +22,15 @@ const Login = ({ isLoggedIn, setIsLoggedIn, user, setUser }) => {
     fetch(`${heroku}/log-in`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(reqData),
+      body: JSON.stringify(reqData)
     })
-      .then((res) => res.json())
+      .then((res) => {
+        res.json()
+        if (!res.ok) {
+          throw new Error(`Error : ${res.status}`)
+          return;
+        }
+      })
       .then((res) => {
         // alert('Logged In Successfully');
         console.log(res)
