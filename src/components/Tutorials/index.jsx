@@ -1,16 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useEffect } from 'react';
 import OneTutorial from '../OneTutorial';
 import SearchTutorial from '../SearchTutorial/index';
-import { NavLink, Route } from 'react-router-dom';
 import './style.css';
+import getUser from '../Users/index';
 
 const Tutorials = (props) => {
-  console.log('test');
+  // console.log('test');
   const [selectedId, setSelectedId] = React.useState(null);
   const [searchTutorial, setSearchTutorial] = React.useState('');
   const [visibile, setVisibile] = React.useState(false);
   const list = props.list;
-  console.log(list);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false)
+  // const [user, setUser] = useState({})
+  // console.log(list);
+  // useEffect(() => {
+  //   const token = window.localStorage.getItem('access_token')
+
+  //   if (token) {
+  //     getUser(token)
+  //       .then((data) => {
+  //         setUser(data)
+  //         setIsLoggedIn(true)
+  //       })
+  //       .catch((error) => {
+  //         console.log(error)
+  //       })
+  //   }
+  // }, [])
+
   if (!list) {
     return <h3>...Loading</h3>;
   }
@@ -43,7 +61,7 @@ const Tutorials = (props) => {
   const filterList = () =>
     list
       .filter((item) => selectedId === item.id)
-      .map((item) => <OneTutorial item={item} />);
+      .map((item, i) => <OneTutorial key={i} item={item} />);
 
   return (
     <div>

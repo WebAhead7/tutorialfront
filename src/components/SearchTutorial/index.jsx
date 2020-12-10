@@ -10,7 +10,7 @@ function SearchTutorial(props) {
       <input
         className='searchBox'
         placeholder='Tutorial Name'
-        className='searchtutorial'
+        // className='searchtutorial'
         type='text'
         value={props.searchTutorial}
         onChange={handleTextChanged}

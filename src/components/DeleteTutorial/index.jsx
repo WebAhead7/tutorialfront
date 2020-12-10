@@ -1,7 +1,9 @@
 import React from 'react';
+import { deleteTutorials } from '../Api/Api';
 
 const DeleteTutorial = (props) => {
-  <h4>DeleteTutorial </h4>;
+  // deleteTutorials(props.id);
+  return <h4>DeleteTutorial </h4>;
 };
 
 export default DeleteTutorial;
