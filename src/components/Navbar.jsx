@@ -30,14 +30,14 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn, user, setUser }) => {
   }
 
   return (
-    <nav className='nav-wrapper blue darken-3'>
-      <div className='container'>
-        <NavLink to='/' className='brand-logo'>
+    <nav className="nav-wrapper blue darken-3">
+      <div className="container">
+        <NavLink to="/" className="brand-logo">
           Tutorials
         </NavLink>
-        <ul className='right'>
+        <ul className="right">
           <li>
-            <NavLink to='/'>Home</NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           {isLoggedIn ?
             [

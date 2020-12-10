@@ -1,5 +1,4 @@
 import React from 'react';
-import { deleteTutorials } from '../Api/Api';
 
 const DeleteTutorial = (props) => {
   // deleteTutorials(props.id);
